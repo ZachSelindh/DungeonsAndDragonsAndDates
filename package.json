@@ -1,0 +1,23 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "A deployed app using Node.js and Express to create a dating application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachSelindh/Friend-Finder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachSelindh/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/ZachSelindh/Friend-Finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
