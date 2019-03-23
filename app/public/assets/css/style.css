@@ -1,0 +1,63 @@
+/* CSS file for Dungeons and Dragons and Dates */
+
+@font-face {
+    font-family: "Vecna";
+    src: url("../fonts/Vecna-Bold.otf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/tavern.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Vecna";
+}
+
+#page-head-text-title {
+    font-size: 3em;
+}
+
+#page-head-text {
+    background-color: rgba(255,255,255,0.6);
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0.3em;
+}
+
+#page-head-subtext {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+#home-body, #survey-body {
+    background-color: rgba(255,255,255,0.6);
+    margin: auto;
+    margin-top: 2em;
+    padding: 2em;
+
+}
+
+#home-text {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#survey-button {
+    margin: auto;
+    margin-top: 1em;
+    font-size: 2em;
+    background-color: black;
+    color: white;
+}
+
+#survey-button:hover {
+    color: red;
+}
