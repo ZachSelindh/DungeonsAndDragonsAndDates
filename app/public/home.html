@@ -1,57 +1,130 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
-<head>
-        <!-- CSS Reset -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <!-- Boostrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+  <head>
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+    />
+    <!-- Boostrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <title>Dungeons and Dragons and Dates</title>
-</head>
-    
-<body>
- <div class="container">
-  <div class="page-header">
-   <div class="row">
-    <div class="col-sm-12 col-md-8" id="page-head-text">
-     <h1 id="page-head-text-title">Dungeons and Dragons and Dates</h1>   
-     <p id="page-head-subtext">A role-playing dating game</p>
-    </div>
-   </div>
-  </div>  
-  <div class="col-sm-12 col-md-10" id="home-body">
-   <div class="row">
-    <p id="home-text">
-     Welcome, traveler! In all the realms, I've never seen a lonelier face.
-     If you're interested, I can furnish you a questionaire that will match you with 
-     adventurers with similar sensibilities. Click the button below to begin!
-    </p>
-    <a href="/survey" class="btn btn-default" id="survey-button">Begin Survey</a>
-   </div>   
-  </div>
-  <div class="row">
-   <div class="col-4">
-    <a href="/api/friends"   
-   </div>   
-  </div>
- </div>
-  
- 
+    <style>
+      @font-face {
+        font-family: "Alemendrasc";
+        src: url("https://fonts.gstatic.com/s/almendrasc/v9/Iure6Yx284eebowr7hbyTaZOrLQ.woff2");
+      }
 
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: url("https://i.ytimg.com/vi/rv3Nl-Od9YU/maxresdefault.jpg")
+          no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-family: "Alemendrasc";
+      }
+
+      #page-head-text-title {
+        font-size: 3em;
+      }
+
+      #page-head-text {
+        background-color: rgba(255, 255, 255, 0.6);
+        margin: auto;
+        margin-top: 0.5em;
+        padding: 0.5em;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 0.3em;
+      }
+
+      #page-head-subtext {
+        font-size: 1.5em;
+        margin-top: 0.5em;
+      }
+
+      #home-body,
+      #survey-body {
+        background-color: rgba(255, 255, 255, 0.6);
+        margin: auto;
+        margin-top: 2em;
+        padding: 2em;
+      }
+
+      #home-text {
+        text-align: center;
+        font-size: 1.5em;
+      }
+
+      #survey-button,
+      #survey-submit-button {
+        margin: auto;
+        margin-top: 1em;
+        font-size: 2em;
+        background-color: black;
+        color: white;
+      }
+
+      #survey-button:hover,
+      #survey-submit-button:hover {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-sm-12 col-md-8" id="page-head-text">
+            <h1 id="page-head-text-title">Dungeons and Dragons and Dates</h1>
+            <p id="page-head-subtext">A role-playing dating game</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-10" id="home-body">
+        <div class="row">
+          <p id="home-text">
+            Welcome, traveler! In all the realms, I've never seen a lonelier
+            face. If you're interested, I can furnish you a questionaire that
+            will match you with adventurers with similar sensibilities. Click
+            the button below to begin!
+          </p>
+          <a href="/survey" class="btn btn-default" id="survey-button"
+            >Begin Survey</a
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <a href="/api/friends"></a>
+        </div>
+      </div>
+    </div>
 
     <!-- JQuery -->
-<script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap Javascript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-    crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
     <!-- Javascript -->
-
-</body>
-
+  </body>
 </html>

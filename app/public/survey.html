@@ -1,35 +1,371 @@
 <!doctype HTML>
 <html>
-<head>
-        <!-- CSS Reset -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <!-- Boostrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-    <title>Dungeons and Dragons and Dates</title>
-</head>
-    
-<body>
- <div class="container">
-  <div class="page-header">
-   <h1>Dungeons and Dragons and Dates</h1>
-  </div>  
- </div>
- 
 
+<head>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <!-- Boostrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Dungeons and Dragons and Dates</title>
+    <style>
+        @font-face {
+            font-family: "Alemendrasc";
+            src: url("https://fonts.gstatic.com/s/almendrasc/v9/Iure6Yx284eebowr7hbyTaZOrLQ.woff2");
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://i.ytimg.com/vi/rv3Nl-Od9YU/maxresdefault.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: "Alemendrasc";
+        }
+
+        .form-group {
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .radio-inline {
+            padding: 0.5em;
+        }
+
+        .survey-question {
+            font-size: 1.75em;
+            text-align: center;
+            margin: auto;
+        }
+
+        #page-head-text-title {
+            font-size: 3em;
+        }
+
+        #survey-title {
+            padding-bottom: 0.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 1px solid black;
+        }
+
+        #page-head-text {
+            background-color: rgba(255, 255, 255, 0.6);
+            margin: auto;
+            margin-top: 0.5em;
+            padding: 0.5em;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 2em;
+        }
+
+        #page-head-subtext {
+            font-size: 1.5em;
+            margin-top: 0.5em;
+        }
+
+        #home-body,
+        #survey-body {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.6);
+            margin: auto;
+            margin-top: 2em;
+            padding: 2em;
+            border: 1px solid black;
+            border-radius: 2em;
+        }
+
+        #home-text {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        #survey-button,
+        #survey-submit-button,
+        #api-button {
+            margin: auto;
+            margin-top: 1em;
+            font-size: 2em;
+            background-color: black;
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        #api-button {
+            font-size: 1em;
+        }
+
+        #survey-button:hover,
+        #survey-submit-button:hover,
+        #api-button:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12 col-md-8" id="page-head-text">
+                    <h1 id="page-head-text-title">Dungeons and Dragons and Dates</h1>
+                    <p id="page-head-subtext">A role-playing dating game</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-10" id="survey-body">
+            <h1 id="survey-title">Answer the following questions:</h1>
+            <div class="row">
+             <p class="survey-question">What is your name?</p>   
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-1">
+                    <p><strong>1: </strong>I'm most at home while raiding dungeons for loot.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey1" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey1" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey1" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey1" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey1" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-2">
+                    <p><strong>2: </strong>I prefer light armor, it's easier to avoid attacks in.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey2" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey2" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey2" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey2" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey2" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-3">
+                    <p><strong>3: </strong>Magic is for nerds. Give me a sharp object any day.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey3" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey3" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey3" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey3" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey3" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-4">
+                    <p><strong>4: </strong>If I'm going to use a blade, it had better be a huge one.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey4" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey4" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey4" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey4" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey4" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-5">
+                    <p><strong>5: </strong>A strong moral code is vital in order to do what is good.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey5" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey5" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey5" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey5" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey5" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-6">
+                    <p><strong>6: </strong>Magic is good for one thing: Destruction of my enemies.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey6" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey6" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey6" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey6" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey6" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-7">
+                    <p><strong>7: </strong>An enemy killed from behind is better than two in direct combat.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey7" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey7" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey7" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey7" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey7" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-8">
+                    <p><strong>8: </strong>Strength is power.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey8" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey8" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey8" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey8" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey8" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-9">
+                    <p><strong>9: </strong>The world is a dangerous place, and must be cleansed.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey9" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey9" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey9" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey9" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey9" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group survey-question" id="question-10">
+                    <p><strong>10: </strong>Magic is a tool, and should be used to serve others.</p>
+                    Disagree
+                    <label class="radio-inline">
+                        <input type="radio" name="survey10" value="1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey10" value="2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey10" value="3"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey10" value="4"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="survey10" value="5"> 5
+                    </label>
+                    Agree
+                </div>
+            </div>
+            <button class="btn btn-default" id="survey-submit-button">Submit Results</button>
+            <div class="row">
+                <div class="col-4">
+                    <a class="btn btn-default" id="api-button" href="/api/friends">API-Friends List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
     <!-- JQuery -->
-<script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Bootstrap Javascript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <!-- Javascript -->
+
+    <script>
+
+
+    </script>
 
 </body>
 

@@ -1,9 +1,8 @@
-    // Import NPM's
-var path = require("path");
+// Import NPM's
+var characters = require("../data/friends");
 
 module.exports = function(app) {
-    
-    app.get("/frieds", function(req, res) {
-        res.json(path.join(__dirname, "../data/friends.js"));
-    });
-}
+  app.get("/api/friends", function(req, res) {
+    res.json(characters);
+  });
+};
