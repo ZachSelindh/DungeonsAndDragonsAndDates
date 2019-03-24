@@ -10,5 +10,28 @@ module.exports = function(app) {
     var newChar = req.body;
     var surveyScores = req.body.scores;
     characters.push(newChar);
+
+    var characterDiff = 0;
+
+    var charMatch = {
+      name: "",
+      photo: "",
+      difference: Infinity
+    };
+
+    for (i = 0; i < characters.length; i++) {
+      var thisChar = characters[i];
+      for (i = 0; i < surveyScores.length; i++) {
+        if (surveyScores[i] == thisChar.body.scores[i]) {
+        } else if (surveyScores[i] > thisChar.body.scores[i]) {
+          characterDiff += surveyScores[i] - thisChar.body.scores[i];
+        } else if (surveyScores[i] < thisChar.body.scores[i]) {
+          characterDiff += thisChar.body.scores[i] - surveyScores[i];
+        }
+      }
+      console.log(
+        "Character diff: " + thisChar.body.name + " " + characterDiff
+      );
+    }
   });
 };
