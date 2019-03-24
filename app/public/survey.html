@@ -33,13 +33,17 @@
             font-size: 1.5em;
         }
 
-        .radio-inline {
-            padding: 0.5em;
+        .dropdown {
+            width: 30%;
+            margin: auto;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
         }
 
         .survey-question {
             font-size: 1.75em;
             text-align: center;
+            width: 100%;
             margin: auto;
         }
 
@@ -48,8 +52,10 @@
         }
 
         #survey-title {
+            margin: auto;
             padding-bottom: 0.5em;
             margin-bottom: 0.5em;
+            margin-top: 0.5em;
             border-bottom: 1px solid black;
         }
 
@@ -104,6 +110,23 @@
         #api-button:hover {
             color: red;
         }
+
+        #character-input,
+        #picture-input {
+            padding: 0.5em;
+            margin: auto;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        } 
+
+        #character-input {
+            width: 50%;
+        }
+
+        #picture-input {
+            width: 75%
+        }  
+
     </style>
 </head>
 
@@ -118,229 +141,129 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-10" id="survey-body">
-            <h1 id="survey-title">Answer the following questions:</h1>
+            <h1 id="survey-title">Enter your details:</h1>
             <div class="row">
-             <p class="survey-question">What is your name?</p>   
+             <p class="survey-question">What is your name?</p>
+            <input id="character-input" class="form-control survey-question" 
+                placeholder="Enter your name">
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-1">
-                    <p><strong>1: </strong>I'm most at home while raiding dungeons for loot.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey1" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey1" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey1" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey1" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey1" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question">URL of your picture:</p>
+                <input id="picture-input" class="form-control survey-question" 
+                placeholder="Picture URL">
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-2">
-                    <p><strong>2: </strong>I prefer light armor, it's easier to avoid attacks in.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey2" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey2" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey2" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey2" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey2" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <h1 id="survey-title">Answer the following questions:</h1>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-3">
-                    <p><strong>3: </strong>Magic is for nerds. Give me a sharp object any day.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey3" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey3" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey3" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey3" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey3" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+             <p class="survey-question"><strong>1: </strong>I'm most at home when raiding dungeons for loot.</p> 
+            <select class="form-control dropdown" id="question-1">
+                <option value="0">Select</option>
+                <option value="1">1 Strongly Disagree</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 Strongly Agree</option>
+            </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-4">
-                    <p><strong>4: </strong>If I'm going to use a blade, it had better be a huge one.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey4" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey4" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey4" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey4" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey4" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>2: </strong>I prefer light armor, it's easier to avoid attacks in.</p>
+                <select class="form-control dropdown" id="question-2">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-5">
-                    <p><strong>5: </strong>A strong moral code is vital in order to do what is good.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey5" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey5" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey5" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey5" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey5" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>3: </strong>Magic is for nerds. Give me a sharp object any day.</p>
+                <select class="form-control dropdown" id="question-3">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-6">
-                    <p><strong>6: </strong>Magic is good for one thing: Destruction of my enemies.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey6" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey6" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey6" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey6" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey6" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>4: </strong>If I'm going to use a blade, it had better be a huge one.</p>
+                <select class="form-control dropdown" id="question-4">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-7">
-                    <p><strong>7: </strong>An enemy killed from behind is better than two in direct combat.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey7" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey7" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey7" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey7" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey7" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>5: </strong>A strong moral code is vital in order to do what is good.</p>
+                <select class="form-control dropdown" id="question-5">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-8">
-                    <p><strong>8: </strong>Strength is power.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey8" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey8" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey8" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey8" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey8" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>6: </strong>Magic is good for one thing: Destruction of my enemies.</p>
+                <select class="form-control dropdown" id="question-6">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-9">
-                    <p><strong>9: </strong>The world is a dangerous place, and must be cleansed.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey9" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey9" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey9" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey9" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey9" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>7: </strong>An enemy killed from behind is better than two in direct combat.</p>
+                <select class="form-control dropdown" id="question-7">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <div class="row">
-                <div class="form-group survey-question" id="question-10">
-                    <p><strong>10: </strong>Magic is a tool, and should be used to serve others.</p>
-                    Disagree
-                    <label class="radio-inline">
-                        <input type="radio" name="survey10" value="1"> 1
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey10" value="2"> 2
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey10" value="3"> 3
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey10" value="4"> 4
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="survey10" value="5"> 5
-                    </label>
-                    Agree
-                </div>
+                <p class="survey-question"><strong>8: </strong>Strength is power.</p>
+                <select class="form-control dropdown" id="question-8">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
+            </div>
+            <div class="row">
+                <p class="survey-question"><strong>9: </strong>The world is a dangerous place, and must be cleansed.</p>
+                <select class="form-control dropdown" id="question-9">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
+            </div>
+            <div class="row">
+                <p class="survey-question"><strong>10: </strong>Magic is a tool, and should be used to serve others.</p>
+                <select class="form-control dropdown" id="question-10">
+                    <option value="0">Select</option>
+                    <option value="1">1 Strongly Disagree</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Strongly Agree</option>
+                </select>
             </div>
             <button class="btn btn-default" id="survey-submit-button">Submit Results</button>
             <div class="row">
@@ -362,11 +285,38 @@
         crossorigin="anonymous"></script>
     <!-- Javascript -->
 
-    <script>
-
+    <script type="text/Javascript">
+    $("#survey-submit-button").on("click", function(){
+        $.ajaxSetup({ traditional: true });
+        if ($("#character-input").val() === "" || $("#picture-input").val() === "") {
+            alert("Please enter your name and a photo URL!")
+        } else {
+            var newChar = {
+                name: $("#character-input").val(),
+                photo: $("#picture-input").val(),
+                scores: [
+                parseInt($("#question-1").val()),
+                parseInt($("#question-2").val()),
+                parseInt($("#question-3").val()),
+                parseInt($("#question-4").val()),
+                parseInt($("#question-5").val()),
+                parseInt($("#question-6").val()),
+                parseInt($("#question-7").val()),
+                parseInt($("#question-8").val()),
+                parseInt($("#question-9").val()),
+                parseInt($("#question-10").val())
+                ]
+            }
+        }
+        console.log(newChar);
+        $.post("/api/friends", newChar).done(function() {
+        alert("Added new character!");
+      });
+    })
 
     </script>
 
 </body>
 
 </html>
+
