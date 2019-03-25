@@ -6,32 +6,32 @@ module.exports = function(app) {
     res.json(characters);
   });
   app.post("/api/friends", function(req, res) {
-    console.log("req.body", req.body);
     var newChar = req.body;
     var surveyScores = req.body.scores;
-    characters.push(newChar);
-
-    var characterDiff = 0;
-
-    var charMatch = {
-      name: "",
-      photo: "",
-      difference: Infinity
-    };
+    differenceArray = [];
 
     for (i = 0; i < characters.length; i++) {
-      var thisChar = characters[i];
-      for (i = 0; i < surveyScores.length; i++) {
-        if (surveyScores[i] == thisChar.body.scores[i]) {
-        } else if (surveyScores[i] > thisChar.body.scores[i]) {
-          characterDiff += surveyScores[i] - thisChar.body.scores[i];
-        } else if (surveyScores[i] < thisChar.body.scores[i]) {
-          characterDiff += thisChar.body.scores[i] - surveyScores[i];
-        }
+      var differential = 0;
+      characters[i].difference = differential;
+      for (x = 0; x < 10; x++) {
+        differential += Math.abs(surveyScores[x] - characters[i].scores[x]);
       }
-      console.log(
-        "Character diff: " + thisChar.body.name + " " + characterDiff
-      );
+      characters[i].difference = differential;
+      differenceArray.push(differential);
     }
+
+    // For loop that iterates through difference values and finds the index of the lowest.
+    var index = 0;
+    var temp = 100;
+    for (y = 0; y < differenceArray.length; y++) {
+      if (differenceArray[y] < temp) {
+        temp = differenceArray[y];
+        index = y;
+      }
+    }
+    var bestMatch = characters[index];
+    res.json(bestMatch);
+    characters.push(newChar);
+    characters.difference = 0;
   });
 };

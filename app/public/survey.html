@@ -309,8 +309,8 @@
             }
         }
         console.log(newChar);
-        $.post("/api/friends", newChar).done(function() {
-        alert("Added new character!");
+        $.post("/api/friends", newChar).done(function(result) {
+            alert(result.name + " is your match")
       });
     })
 
