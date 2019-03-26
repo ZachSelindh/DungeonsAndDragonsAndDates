@@ -68,16 +68,23 @@
       }
 
       #survey-button,
-      #survey-submit-button {
+      #survey-submit-button,
+      #api-button {
         margin: auto;
         margin-top: 1em;
         font-size: 2em;
         background-color: black;
         color: white;
+        margin-bottom: 1em;
+      }
+
+      #api-button {
+        font-size: 1em;
       }
 
       #survey-button:hover,
-      #survey-submit-button:hover {
+      #survey-submit-button:hover,
+      #api-button:hover {
         color: red;
       }
     </style>
@@ -101,14 +108,16 @@
             will match you with adventurers with similar sensibilities. Click
             the button below to begin!
           </p>
-          <a href="/survey" class="btn btn-default" id="survey-button"
-            >Begin Survey</a
-          >
+          <a href="/survey" class="btn btn-default" id="survey-button">
+            Begin Survey
+          </a>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <a href="/api/friends"></a>
+        <div class="row">
+          <div class="col-4">
+            <a class="btn btn-default" id="api-button" href="/api/friends">
+              API-Friends List
+            </a>
+          </div>
         </div>
       </div>
     </div>
