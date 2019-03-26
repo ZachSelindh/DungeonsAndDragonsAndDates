@@ -93,6 +93,10 @@
         border-radius: 2em;
       }
 
+      #charModal {
+        background-color: lightgray;
+      }
+
       #home-text {
         text-align: center;
         font-size: 1.5em;
@@ -134,10 +138,49 @@
       #picture-input {
         width: 75%;
       }
+
+      #charModalText {
+        font-size: 2em;
+        text-align: center;
+      }
     </style>
   </head>
 
   <body>
+    <!-- Modal -->
+    <div id="charModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Your results:</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div id="charModalText" class="modal-body">
+            <p>
+              Congratulations! You matched with <br /><br />
+              <span id="charMatchName"></span><br /><br />
+              Your survey difference was:
+              <span id="charMatchDiff"></span>
+            </p>
+            <img id="charImg" src="" height="200px" width="200px" />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="charModalClose"
+              class="btn btn-default"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="page-header">
         <div class="row">
@@ -337,6 +380,7 @@
       $("#survey-submit-button").on("click", function(){
           $.ajaxSetup({ traditional: true });
           if ($("#character-input").val() === "" || $("#picture-input").val() === "") {
+            /* $("#survey-submit-button")attr("data-toggle", "none"); */
               alert("Please enter your name and a photo URL!")
           } else {
               var newChar = {
@@ -358,9 +402,29 @@
           }
           console.log(newChar);
           $.post("/api/friends", newChar).done(function(result) {
-
+            $("#charModal").modal();
+            $("#charMatchName").text(result.name);
+            $("#charMatchDiff").text(result.difference);
+            $("#charImg").attr("src", result.photo);
+            $("#survey-body").hide();
         });
-      })
+      });
+
+      $("#charModalClose").on("click", function() {
+            $("#character-input").val(""),
+            $("#picture-input").val(""),
+            $("#question-1").val(0),
+            $("#question-2").val(0),
+            $("#question-3").val(0),
+            $("#question-4").val(0),
+            $("#question-5").val(0),
+            $("#question-6").val(0),
+            $("#question-7").val(0),
+            $("#question-8").val(0),
+            $("#question-9").val(0),
+            $("#question-10").val(0)
+            $("#survey-body").show();
+      });
     </script>
   </body>
 </html>
