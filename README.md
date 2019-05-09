@@ -1,4 +1,4 @@
-# Friend-Finder
+# D&D & Dates
 This application uses Node.js as a functional server, running express to handle requests and results.
 
 A static native data file contains JSON information for the D&D-style characters that are pre-loaded in this dating app.
